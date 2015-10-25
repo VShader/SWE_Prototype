@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>gui/Interface.qml</file>
+        <file>gui/InterfaceForm.ui.qml</file>
+        <file>scripts/itemCreation.js</file>
+        <file>asics-gel-saga-ii-kill-bill-3.jpg</file>
+    </qresource>
+</RCC>
