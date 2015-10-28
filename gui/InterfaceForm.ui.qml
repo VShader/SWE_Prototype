@@ -1,5 +1,6 @@
 import QtQuick 2.4
 import QtQuick.Controls 1.4
+import QtQuick.Layouts 1.2
 
 Item {
     id: item
@@ -9,11 +10,27 @@ Item {
     property alias item: item
     property alias item2: item2
     property alias mouseArea1: mouseArea1
+    property alias mouseArea2: mouseArea2
     property alias checkButton: checkButton
     property alias notInterestedButton: notInterestedButton
     property alias goBackButton: goBackButton
     property alias buyButton: buyButton
-    property alias mouseArea2: mouseArea2
+    property alias menueButton: menueButton
+
+
+    ToolBar
+    {
+        RowLayout
+        {
+            anchors.fill: parent
+            ToolButton
+            {
+                id: menueButton
+                iconSource: "qrc:/icons/ic_menu.svg"
+                Layout.alignment: Qt.AlignRight
+            }
+        }
+    }
 
     Item {
         id: item1

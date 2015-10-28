@@ -10,24 +10,19 @@ ApplicationWindow {
     height: 520
     visible: true
 
-    ToolBar
-    {
-        ToolButton
-        {
-            id: menueButton
-            iconSource: "qrc:/icons/ic_menu.svg"
-        }
-    }
+
 
     InterfaceForm
     {
         id: form
+
 
         item.anchors.fill: parent
         mouseArea1.onClicked: item.state = "product details state"
         checkButton.onClicked: item.state = "product details state"
         goBackButton.onClicked: item.state = "default state"
         mouseArea2.acceptedButtons: Qt.AllButtons
+        menueButton.onClicked: console.log("menue")
 
         mouseArea2.onClicked:
         {
