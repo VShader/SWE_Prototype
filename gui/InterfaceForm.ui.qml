@@ -7,13 +7,17 @@ Item {
     height: 400
 
     property alias item: item
+    property alias item2: item2
     property alias mouseArea1: mouseArea1
-    property alias button1: button1
-    property alias button2: button2
-    property alias image1: image1
+    property alias checkButton: checkButton
+    property alias notInterestedButton: notInterestedButton
+    property alias goBackButton: goBackButton
+    property alias buyButton: buyButton
+    property alias mouseArea2: mouseArea2
 
     Item {
         id: item1
+        visible: true
         anchors.fill: parent
 
         Label {
@@ -22,7 +26,7 @@ Item {
             y: 315
             width: 138
             height: 16
-            text: qsTr("DVD Collection")
+            text: qsTr("Title")
             font.pointSize: 11
             font.bold: true
             horizontalAlignment: Text.AlignHCenter
@@ -34,7 +38,7 @@ Item {
             y: 37
             width: 218
             height: 257
-            source: "../asics-gel-saga-ii-kill-bill-3.jpg"
+            visible: true
 
             MouseArea {
                 id: mouseArea1
@@ -44,10 +48,36 @@ Item {
                 anchors.fill: parent
             }
         }
+
+        ToolButton {
+            id: notInterestedButton
+            x: 313
+            y: 326
+            width: 59
+            height: 52
+            tooltip: "not iterrested"
+            iconSource: "qrc:/icons/ic_close.svg"
+            antialiasing: false
+            z: 0
+            checked: false
+        }
+
+        ToolButton {
+            id: checkButton
+            x: 28
+            y: 326
+            width: 57
+            height: 52
+            text: ""
+            iconSource: "qrc:/icons/ic_check.svg"
+            tooltip: "ckick to see more"
+        }
+
     }
 
     Item {
         id: item2
+        visible: false
         anchors.fill: parent
 
         MouseArea {
@@ -56,31 +86,29 @@ Item {
             opacity: 0
         }
 
-        Button {
-            id: button2
-            x: 122
-            y: 355
-            text: qsTr("Button")
+        ToolButton {
+            id: buyButton
+            x: 28
+            y: 326
+            width: 57
+            height: 52
+            text: ""
+            tooltip: "add to shopping cart"
+            iconSource: "qrc:/icons/ic_check.svg"
         }
-    }
 
-    ProgressBar {
-        id: progressBar1
-        x: 100
-        y: 339
-        opacity: 0
-    }
-
-    Button {
-        id: button1
-        x: 163
-        y: 42
-        text: qsTr("Button")
-        opacity: 0
+        ToolButton {
+            id: goBackButton
+            x: 313
+            y: 326
+            width: 59
+            height: 52
+            tooltip: "go back"
+        }
     }
     states: [
         State {
-            name: "State1"
+            name: "product details state"
 
             PropertyChanges {
                 target: item1
@@ -88,20 +116,28 @@ Item {
             }
 
             PropertyChanges {
-                target: progressBar1
-                value: 0.5
-                opacity: 1
-            }
-
-            PropertyChanges {
-                target: button1
-                text: qsTr("back")
-                opacity: 1
-            }
-
-            PropertyChanges {
                 target: mouseArea2
                 opacity: 1
+            }
+
+            PropertyChanges {
+                target: item2
+                visible: true
+            }
+
+            PropertyChanges {
+                target: goBackButton
+                iconSource: "qrc:/icons/ic_close.svg"
+            }
+
+            PropertyChanges {
+                target: buyButton
+                iconSource: "qrc:/icons/ic_add_shopping_cart.svg"
+            }
+
+            PropertyChanges {
+                target: notInterestedButton
+                iconSource: "qrc:/icons/ic_close.svg"
             }
         }
     ]

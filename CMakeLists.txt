@@ -6,10 +6,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 
 set(src
     src/swe_prototype
+    src/offerModel.cpp
 )
 
 set(header
-    src/
+    src/offerModel.h
 )
 
 set(qml
@@ -25,8 +26,12 @@ set(resourceFiles
 set(resources
     ${resourceFiles}
     ${qml}
+	icons/ic_add_shopping_cart.svg
+	icons/ic_check.svg
+	icons/ic_close.svg
+	icons/ic_menu.svg
+	icons/ic_shopping_cart.svg
 )
-
 
 
 

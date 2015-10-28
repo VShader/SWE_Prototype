@@ -4,5 +4,10 @@
         <file>gui/InterfaceForm.ui.qml</file>
         <file>scripts/itemCreation.js</file>
         <file>asics-gel-saga-ii-kill-bill-3.jpg</file>
+        <file>icons/ic_add_shopping_cart.svg</file>
+        <file>icons/ic_check.svg</file>
+        <file>icons/ic_close.svg</file>
+        <file>icons/ic_menu.svg</file>
+        <file>icons/ic_shopping_cart.svg</file>
     </qresource>
 </RCC>
