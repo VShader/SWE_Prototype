@@ -8,10 +8,8 @@ OfferModel::OfferModel(QObject *parent) : QObject(parent)
 
 }
 
-QVector<QString> OfferModel::getHeadline()
+void OfferModel::getHeadline()
 {
-    QVector<QString> headlines;
-
     auto db = connectToDB();
     QSqlQuery query("SELECT headline FROM T_offer");
 //        auto idIndex = query.record().indexOf("ID");
@@ -22,8 +20,28 @@ QVector<QString> OfferModel::getHeadline()
         headlines.push_back(query.value(0).toString());
         qDebug() << headlines.last();
     }
-    return headlines;
 }
+
+
+QString OfferModel::nextHeadline()
+{
+    if(headlines.empty())
+    {
+        try
+        {
+            getHeadline();
+        }
+        catch(ConnectionFaild& excep)
+        {
+            m_headline = excep.what();
+            qDebug() << excep.what();
+        }
+    }
+    m_headline = headlines.front();
+    headlines.pop_front();
+    return m_headline;
+}
+
 
 QSqlDatabase OfferModel::connectToDB()
 {

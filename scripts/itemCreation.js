@@ -11,4 +11,3 @@ function createButton(x, y)
             'x: ' + x + '; y: ' + y + '; onClicked: console.log("' + elements.length.toString() + 'clicked")}';
     elements.push(Qt.createQmlObject(code, form.item2, "dynamicSnippet1"));
 }
-

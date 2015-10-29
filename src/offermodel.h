@@ -19,17 +19,21 @@ public:
 class OfferModel : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QVector<QString> headlines READ getHeadline)
+    Q_PROPERTY(QString headline READ nextHeadline)
 public:
     explicit OfferModel(QObject *parent = nullptr);
 
 signals:
 
 public slots:
-    QVector<QString> getHeadline();
+    void getHeadline();
+    QString nextHeadline();
 
 private:
-    QSqlDatabase connectToDB();
+    QVector<QString> headlines;
+    QString m_headline;
+
+    QSqlDatabase OfferModel::connectToDB();
 };
 
 #endif // OFFERMODEL_H

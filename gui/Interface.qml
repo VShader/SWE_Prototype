@@ -17,11 +17,13 @@ ApplicationWindow {
         id: form
 
 
+        label1.text: model.headline
         item.anchors.fill: parent
         mouseArea1.onClicked: item.state = "product details state"
         checkButton.onClicked: item.state = "product details state"
         goBackButton.onClicked: item.state = "default state"
         mouseArea2.acceptedButtons: Qt.AllButtons
+        notInterestedButton.onClicked: label1.text = model.headline
         menueButton.onClicked: console.log("menue")
 
         mouseArea2.onClicked:

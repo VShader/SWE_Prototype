@@ -11,6 +11,7 @@ Item {
     property alias item2: item2
     property alias mouseArea1: mouseArea1
     property alias mouseArea2: mouseArea2
+    property alias label1: label1
     property alias checkButton: checkButton
     property alias notInterestedButton: notInterestedButton
     property alias goBackButton: goBackButton
