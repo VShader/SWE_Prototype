@@ -42,9 +42,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 QT5_ADD_RESOURCES(resources ${resourceFiles})
 
-if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-add_definitions(-DQT_QML_DEBUG)
-endif(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -DQT_QML_DEBUG")
 
 add_executable(${PROJECT_NAME} ${src} ${resources})
 target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Qml Qt5::Sql)
