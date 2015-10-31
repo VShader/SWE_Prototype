@@ -30,6 +30,8 @@ QString OfferModel::nextHeadline()
         try
         {
             getHeadline();
+			m_headline = headlines.front();
+			headlines.pop_front();
         }
         catch(ConnectionFaild& excep)
         {
@@ -37,8 +39,6 @@ QString OfferModel::nextHeadline()
             qDebug() << excep.what();
         }
     }
-    m_headline = headlines.front();
-    headlines.pop_front();
     return m_headline;
 }
 
