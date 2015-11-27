@@ -8,16 +8,16 @@ enable_testing()
 
 set(src
     src/swe_prototype.cpp
-    src/offerModel.cpp
+    src/offermodel.cpp
 )
 
 set(header
-    src/offerModel.h
+    src/offermodel.h
 )
 
 set(qml
-    gui/interface.qml
-    gui/interfaceForm.ui.qml
+    gui/Interface.qml
+    gui/InterfaceForm.ui.qml
     scripts/itemCreation.js
 )
 
