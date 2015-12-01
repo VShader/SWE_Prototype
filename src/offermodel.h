@@ -33,7 +33,7 @@ private:
     QVector<QString> headlines;
     QString m_headline;
 
-    QSqlDatabase OfferModel::connectToDB();
+    QSqlDatabase connectToDB();
 };
 
 #endif // OFFERMODEL_H
